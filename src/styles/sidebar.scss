@@ -1,0 +1,127 @@
+@import './variables.scss';
+#app {
+  // 主体区域
+  .main-container {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    transition: margin-left .3s;
+    margin-left: 200px;
+    .app-main {
+      position: absolute;
+      top: 50px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: #ebefef;
+      font-size: 14px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.3s;
+    width: 200px !important;
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    transition-property: top, bottom, width;
+    transition-duration: .2s, .2s, .35s;
+    transition-timing-function: linear, linear, ease;
+    overflow: hidden;
+  }
+  .el-submenu{
+    overflow: hidden;
+  }
+  .hideSidebar {
+    .sidebar-container {
+      width: 84px !important;
+    }
+    .main-container {
+      margin-left: 84px;
+    }
+  }
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      transition: transform .3s;
+      width: 200px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-200px, 0, 0);
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+
+//silder样式调整
+.el-menu{
+  border: none;
+}
+.el-submenu__title{
+  border-radius: 5px;
+}
+.el-menu-item,.el-submenu__title{
+  border-radius: 5px;
+  font-size: 22px;
+  span{
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  
+}
+.el-submenu .el-menu-item{
+  min-width: 100%!important;
+}
+.el-submenu__title:hover{
+  transition: background-color ease .5s ;
+  background-color: rgba(255,255,255,.1) !important;
+}
+.el-menu-item:hover{
+  transition: background-color ease .5s;
+  background-color: rgba(255,255,255,.1)  !important;
+  
+}
+.el-menu-item.is-active{
+  transition: background-color ease .5s;
+  background-color: $menuBg !important;
+  color: $activeColor !important;
+}
+
+.el-menu-item{
+  span{
+    opacity:1;
+    transform: translate3d(0px, 0, 0);
+    transition: transform ease .3s;  
+  }
+    
+}
+.el-menu--collapse{
+  span,i{
+    transform: translate3d(-25px, 0, 0);
+    transition: transform ease .3s;  
+    opacity: 0;
+  }
+  i{
+    opacity: 0;
+  }
+}
+

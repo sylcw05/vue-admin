@@ -1,0 +1,76 @@
+@import "src/styles/variables.scss";
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+    height: 0px;
+    line-height: 0px;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin aroundPadding($top:15px,$left:$top,$right:$top,$bottom:$top) {
+  padding: $top $right $bottom $right;
+}
+
+@function pxTorem($px) {
+  @return $px / 120px * 1rem;
+}
+
+@mixin df {
+  display: flex;
+}
+
+@mixin df-box($flex) {
+  flex: $flex;
+}
+
+@mixin dialog($w:50%) {
+  @media screen and (max-width: $md) {
+    /deep/ .el-dialog {
+      width: 50% !important;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    /deep/ .el-dialog {
+      width: 80% !important;
+    }
+  }
+
+  @media screen and (min-width: $md) {
+    /deep/ .el-dialog {
+      width: $w !important;
+    }
+  }
+
+  /deep/ .form-body {
+    width: 80%;
+    margin: 0px auto;
+    .el-form-item__content > div {
+      width: 100%;
+    }
+  }
+
+}

@@ -1,0 +1,71 @@
+.layout-decision{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.decision-container-left-title, .decision-container-right-top{
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: #fff;
+}
+.icon-logo{
+    width: 65px;
+    height: 46px;
+    background: url(../../assets/img/logo.png) no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px 10px 0 40px
+}
+.decision-title{
+    color: $indexColor;
+    font-size: 28px;
+    vertical-align: middle;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: "黑体";
+}
+.decision-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-flow: row;
+    height: 100%;
+}
+.decision-container-left{
+    width: 330px;
+    height: 100%;
+    position: relative;
+}
+.decision-container-left-top{
+    width: 100%;
+    height: 50%;
+    padding-top: 70px;
+}
+.chart-box{
+    height: 95%;
+}
+.chart-tile{
+    padding-top: 70px;
+}
+.chart-bar-tile{
+    padding-top: 10px;
+}
+.decision-container-left-bottom{
+    width: 100%;
+    height: 50%;
+}
+.decision-container-right{
+    position: relative;
+    flex:1;
+}
+.decision-container-right-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $indexColor;
+}
